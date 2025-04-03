@@ -1,0 +1,39 @@
+{
+  "textlint.languages": ["latex"],
+  "textlint.autoFixOnSave": true,
+
+  "[latex]": {
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
+    "editor.fontSize": 14,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false
+  },
+
+  "latex-workshop.formatting.latex": "latexindent",
+  "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+  "latex-workshop.latex.rootFile.doNotPrompt": true,
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk",
+      "tools": ["latexmk"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-silent",
+        "-synctex=1",
+        "-r",
+        "%WORKSPACE_FOLDER%/.latexmkrc",
+        "-e",
+        "$ENV{'TEXINPUTS'}='%WORKSPACE_FOLDER%/style//:' . $ENV{'TEXINPUTS'}; $ENV{'BSTINPUTS'}='%WORKSPACE_FOLDER%/style//:' . $ENV{'BSTINPUTS'};",
+        "-outdir=%WORKSPACE_FOLDER%/out",
+        "-auxdir=%WORKSPACE_FOLDER%/.aux",
+        "%DOC%"
+      ]
+    }
+  ]
+}

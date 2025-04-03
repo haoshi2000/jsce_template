@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "latex2e"
+  ],
+  "rules": {
+    "prh": {
+      "rulePaths": [
+        "prh-rule.yml"
+      ]
+    }
+  }
+}
